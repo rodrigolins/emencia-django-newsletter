@@ -59,8 +59,8 @@ class BaseNewsletterAdmin(admin.ModelAdmin):
             del actions['make_cancel_sending']
         return actions
 
-    def queryset(self, request):
-        queryset = super(BaseNewsletterAdmin, self).queryset(request)
+    def get_queryset(self, request):
+        queryset = super(BaseNewsletterAdmin, self).get_queryset(request)
         if not request.user.is_superuser and USE_WORKGROUPS:
             newsletters_pk = request_workgroups_newsletters_pk(request)
             queryset = queryset.filter(pk__in=newsletters_pk)

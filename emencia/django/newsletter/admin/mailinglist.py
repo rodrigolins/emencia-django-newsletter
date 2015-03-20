@@ -2,8 +2,8 @@
 from datetime import datetime
 
 from django.contrib import admin
-from django.conf.urls.defaults import url
-from django.conf.urls.defaults import patterns
+from django.conf.urls import url
+from django.conf.urls import patterns
 from django.utils.encoding import smart_str
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
@@ -37,8 +37,8 @@ class MailingListAdmin(admin.ModelAdmin):
     actions_on_top = False
     actions_on_bottom = True
 
-    def queryset(self, request):
-        queryset = super(MailingListAdmin, self).queryset(request)
+    def get_queryset(self, request):
+        queryset = super(MailingListAdmin, self).get_queryset(request)
         if not request.user.is_superuser and USE_WORKGROUPS:
             mailinglists_pk = request_workgroups_mailinglists_pk(request)
             queryset = queryset.filter(pk__in=mailinglists_pk)

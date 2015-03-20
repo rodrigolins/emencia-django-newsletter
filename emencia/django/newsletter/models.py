@@ -43,7 +43,7 @@ class SMTPServer(models.Model):
     password = models.CharField(_('server password'), max_length=128, blank=True,
                                 help_text=_('Leave it empty if the host is public.'))
     port = models.IntegerField(_('server port'), default=25)
-    tls = models.BooleanField(_('server use TLS'))
+    tls = models.BooleanField(_('server use TLS'), default=None)
 
     headers = models.TextField(_('custom headers'), blank=True,
                                help_text=_('key1: value1 key2: value2, splitted by return line.\n'\

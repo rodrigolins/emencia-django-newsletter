@@ -13,7 +13,7 @@
 
 import copy
 
-from django.utils.simplejson import dumps
+import json
 
 
 class Chart(dict):
@@ -56,4 +56,4 @@ class Chart(dict):
 
     def render(self):
         attributes = copy.copy(self)
-        return dumps(attributes)
+        return json.dumps(attributes)

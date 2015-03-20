@@ -23,6 +23,7 @@ class SMTPServerAdminForm(forms.ModelForm):
 
     class Meta:
         model = SMTPServer
+        fields = ['name', 'host', 'user', 'password', 'port', 'tls', 'headers', 'mails_hour']
 
 
 class SMTPServerAdmin(admin.ModelAdmin):

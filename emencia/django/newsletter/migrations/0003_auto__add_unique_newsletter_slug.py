@@ -52,7 +52,7 @@ class Migration(SchemaMigration):
             'object_id': ('django.db.models.fields.PositiveIntegerField', [], {'null': 'True', 'blank': 'True'}),
             'subscriber': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'tags': ('tagging.fields.TagField', [], {'default': "''"}),
-            'tester': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'tester': ('django.db.models.fields.BooleanField', [], {'default': 'None'}),
             'valid': ('django.db.models.fields.BooleanField', [], {'default': 'True'})
         },
         'newsletter.contactmailingstatus': {
@@ -106,7 +106,7 @@ class Migration(SchemaMigration):
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'password': ('django.db.models.fields.CharField', [], {'max_length': '128', 'blank': 'True'}),
             'port': ('django.db.models.fields.IntegerField', [], {'default': '25'}),
-            'tls': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'tls': ('django.db.models.fields.BooleanField', [], {'default': 'None'}),
             'user': ('django.db.models.fields.CharField', [], {'max_length': '128', 'blank': 'True'})
         },
         'newsletter.workgroup': {
